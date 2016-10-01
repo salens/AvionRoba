@@ -66,11 +66,11 @@ public class AvionNit extends Thread {
     @Override
     public void run() {
         boolean dozvoljenoSletanje = false;
-        System.out.println("Pocinju provere za avion  " + avion.getId() + " trazi knjigu " + avion.getOznaka());
+        System.out.println("Pocinju provere za avion  " + avion.getId() + " Avion oznaka " + avion.getOznaka());
         do {
             synchronized (avion) {
                 System.out.println("Avion " + avion.getId() + " je spreman za poletanje i ceka dozvolu za poletanje");
-                if (dozvoljenoSletanje) {
+                if (!dozvoljenoSletanje) {
                     synchronized (avion){
                         System.out.println("Avion " + avion.getId() + " izlazi na pistu i polece");
                         dozvoljenoSletanje = false;
