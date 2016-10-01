@@ -49,7 +49,7 @@ public class Zadatak2DodavanjeVrednosti {
             Roba roba4 = new Roba("Ploce", "Drevne ploce", 3.4, 0.1, 3, 2.3);
             roba1.setAvion(avion2);
             robaDao.create(roba4);
-            
+
             Roba roba5 = new Roba("Stolica", "Plasticna stolica", 2.4, 1.2, 0.8, 0.5);
             roba1.setAvion(avion2);
             robaDao.create(roba5);
