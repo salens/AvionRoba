@@ -47,7 +47,7 @@ public class Zadatak3IzmenaVrednosti {
             List<Roba> robeNakonIzmene = robaDao.queryForAll();
             for (Roba robePosleIzmene : robeNakonIzmene)
                 System.out.println(robePosleIzmene.toString());
-            
+
 
         }catch (Exception e) {
             e.printStackTrace();
