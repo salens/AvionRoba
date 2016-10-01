@@ -48,6 +48,15 @@ public class Roba {
         // zbog orm-a
     }
 
+    public Roba(String naziv, String opis, double tezina, double visina, double duzina, double sirina) {
+        this.naziv = naziv;
+        this.opis = opis;
+        this.tezina = tezina;
+        this.visina = visina;
+        this.duzina = duzina;
+        this.sirina = sirina;
+    }
+
     @Override
     public String toString() {
         return "Roba{" +
