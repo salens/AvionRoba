@@ -42,8 +42,12 @@ public class Zadatak3IzmenaVrednosti {
             izmena.setOpis("Drvena stolica");
             robaDao.update(izmena);
 
-            
 
+            // izlistavanje sve ROBE nakon update-a
+            List<Roba> robeNakonIzmene = robaDao.queryForAll();
+            for (Roba robePosleIzmene : robeNakonIzmene)
+                System.out.println(robePosleIzmene.toString());
+            
 
         }catch (Exception e) {
             e.printStackTrace();
