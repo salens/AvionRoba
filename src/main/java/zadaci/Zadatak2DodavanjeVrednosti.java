@@ -1,8 +1,10 @@
 package zadaci;
 
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.table.TableUtils;
 import model.Avion;
 import model.Roba;
 
@@ -24,6 +26,10 @@ public class Zadatak2DodavanjeVrednosti {
 
             connectionSource = new JdbcConnectionSource("jdbc:sqlite:AvionRoba.db");
 
+            avionDao = DaoManager.createDao(connectionSource, Avion.class);
+            robaDao = DaoManager.createDao(connectionSource, Roba.class);
+
+            TableUtils.clearTable(connectionSource, Avion.class);
 
             //kreriranje objekata AVION
             Avion avion1 = new Avion("Avion 1", 34);
@@ -39,19 +45,19 @@ public class Zadatak2DodavanjeVrednosti {
             robaDao.create(roba1);
 
             Roba roba2 = new Roba("Kosulja", "Na duge rukave", 0.4, 0.01, 2.4, 0.5);
-            roba1.setAvion(avion1);
+            roba2.setAvion(avion1);
             robaDao.create(roba2);
 
             Roba roba3 = new Roba("Voda", "Voda za pice", 1.4, 0.3, 0.04, 0.03);
-            roba1.setAvion(avion1);
+            roba3.setAvion(avion1);
             robaDao.create(roba3);
 
             Roba roba4 = new Roba("Ploce", "Drevne ploce", 3.4, 0.1, 3, 2.3);
-            roba1.setAvion(avion2);
+            roba4.setAvion(avion2);
             robaDao.create(roba4);
 
             Roba roba5 = new Roba("Stolica", "Plasticna stolica", 2.4, 1.2, 0.8, 0.5);
-            roba1.setAvion(avion2);
+            roba5.setAvion(avion2);
             robaDao.create(roba5);
 
 
