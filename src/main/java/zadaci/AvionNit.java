@@ -46,7 +46,7 @@ public class AvionNit extends Thread {
                 e.printStackTrace();
             }
 
-            System.out.println("Avioni poleteli.");
+            System.out.println("svi avioni su poleteli.");
 
         }catch (Exception e) {
             e.printStackTrace();
